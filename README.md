@@ -1,2 +1,1 @@
-# mandu-cursor
-mandu
+# Images for youbin.uk
