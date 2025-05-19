@@ -1,0 +1,19 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+    /* 여기서 크기 조절 */
+    height: auto;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
