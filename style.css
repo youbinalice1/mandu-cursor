@@ -14,6 +14,10 @@ img {
     width: 150px;
     /* 여기서 크기 조절 */
     height: auto;
-    cursor: pointer;
     transition: 0.2s ease-in-out;
+}
+
+/* 이미지에 마우스를 올렸을 때(custom cursor 적용) */
+img:hover {
+  cursor: url("https://raw.githubusercontent.com/youbinalice1/mandu-cursor/main/chop2.png") 16 16, auto;
 }
