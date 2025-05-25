@@ -7,6 +7,9 @@
   --right-clip: 120px;
   --left-top: 60px;
   --right-top: 300px;
+  --neko-width: 100px;
+  --neko-top: 500px;
+  --neko-left: 10px;
 }
 
 .chopstick-container {
@@ -57,4 +60,11 @@
 
 .c3 {
   z-index: 4;
+}
+
+#neko {
+  width: var(--neko-width);
+  position: absolute;
+  top: var(--neko-top);
+  left: var(--neko-left);
 }
