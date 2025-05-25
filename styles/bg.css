@@ -48,6 +48,7 @@
   width: var(--box-width);
   min-height: 400px;
   max-width: 90vw;
+  min-width: 340px;
   margin: 5em auto 4em auto;
   background: grey;
   z-index: 2;
@@ -77,4 +78,16 @@
   position: absolute;
   top: var(--nowopen-top);
   right: var(--nowopen-right);
+}
+
+@media screen and (max-width: 1370px) {
+  #neko, #nowopen {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1271px) {
+  #a4 {
+    display: none;
+  }
 }
