@@ -5,21 +5,24 @@
 
 .chopstick {
     position: absolute;
-    width: 400px;
+        height: 400px;
+        overflow-x: hidden;
 }
 
 .chopstick img {
   position: inherit;
+  width: 400px;
 }
 
 #chopstick1 {
     top: 0px;
     left: 0px;
     margin-left: -100px;
+        width: 400px;
 }
 
 #chopstick2 {
     top: 100px;
     right: 0px;
-    margin-right: -100px;
+        width: 300px;
 }
