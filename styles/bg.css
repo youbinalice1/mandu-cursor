@@ -1,15 +1,18 @@
 /* Chopsticks */
 
 :root {
-  --box-width: 1050px;
+  --box-width: 1000px;
   --chopstick-size: 400px;
-  --left-clip: 60px;
-  --right-clip: 120px;
+  --left-clip: 40px;
+  --right-clip: 100px;
   --left-top: 60px;
   --right-top: 300px;
-  --neko-width: 100px;
+    --neko-width: 100px;
   --neko-top: 500px;
-  --neko-left: 10px;
+  --neko-left: 40px;
+  --nowopen-width: 100px;
+  --nowopen-top: 100px;
+  --nowopen-right: 40px;
 }
 
 .chopstick-container {
@@ -67,4 +70,11 @@
   position: absolute;
   top: var(--neko-top);
   left: var(--neko-left);
+}
+
+#nowopen {
+  width: var(--nowopen-width);
+  position: absolute;
+  top: var(--nowopen-top);
+  right: var(--nowopen-right);
 }
