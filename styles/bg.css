@@ -1,5 +1,14 @@
 /* Chopsticks */
 
+:root {
+  --box-width: 1050px;
+  --chopstick-size: 400px;
+  --left-clip: 60px;
+  --right-clip: 120px;
+  --left-top: 60px;
+  --right-top: 300px;
+}
+
 .chopstick-container {
   /* position: relative; */
   width: 100vw;
@@ -13,24 +22,24 @@
 
 .chopstick img {
   position: inherit;
-  width: 400px;
+  width: var(--chopstick-size);
 }
 
 #chopstick1 {
-    top: 0px;
+    top: var(--left-top);
     left: 0px;
-    margin-left: -100px;
-        width: 400px;
+    margin-left: calc(-1 * var(--left-clip));
+    width: var(--chopstick-size);
 }
 
 #chopstick2 {
-    top: 100px;
+    top: var(--right-top);
     right: 0px;
-        width: 300px;
+    width: calc(var(--chopstick-size) - var(--right-clip));
 }
 
 #box {
-  width: 1050px;
+  width: var(--box-width);
   min-height: 400px;
   max-width: 90vw;
   margin: 5em auto 4em auto;
