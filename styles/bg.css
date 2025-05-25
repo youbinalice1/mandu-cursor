@@ -1,0 +1,25 @@
+.chopstick-container {
+  /* position: relative; */
+  width: 100vw;
+}
+
+.chopstick {
+    position: absolute;
+    width: 400px;
+}
+
+.chopstick img {
+  position: inherit;
+}
+
+#chopstick1 {
+    top: 0px;
+    left: 0px;
+    margin-left: -100px;
+}
+
+#chopstick2 {
+    top: 100px;
+    right: 0px;
+    margin-right: -100px;
+}
