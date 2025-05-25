@@ -1,3 +1,5 @@
+/* Chopsticks */
+
 .chopstick-container {
   /* position: relative; */
   width: 100vw;
@@ -25,4 +27,12 @@
     top: 100px;
     right: 0px;
         width: 300px;
+}
+
+#box {
+  width: 1050px;
+  min-height: 400px;
+  max-width: 90vw;
+  margin: 5em auto 4em auto;
+  background: grey;
 }
