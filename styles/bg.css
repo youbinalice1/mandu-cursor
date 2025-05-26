@@ -1,5 +1,3 @@
-/* Chopsticks */
-
 html,
 body {
   scroll-behavior: smooth !important;
@@ -9,17 +7,15 @@ body {
   --box-width: 1000px;
   --chopstick-size: 1e3px;
   --clip-amount-left: 40px;
-  /* Clip amount for the left chopstick */
   --clip-amount-right: 100px;
-  /* Effective clip amount for the right chopstick (was 40px * 2.5) */
   --left-top: 60px;
-  --right-top: 300px;
-  --neko-width: 100px;
-  --neko-top: 500px;
+  --right-top: 1200px;
+  --neko-width: 200px;
+  --neko-top: 1500px;
   --neko-left: 40px;
-  --nowopen-width: 100px;
-  --nowopen-top: 100px;
-  --nowopen-right: 40px;
+  --nowopen-width: 270px;
+  --nowopen-top: 250px;
+  --nowopen-right: 650px;
   --space-edge-to-box: calc((100vw - min(var(--box-width), 90vw)) / 2);
 }
 
@@ -50,7 +46,6 @@ body {
   top: var(--right-top);
   right: 0px;
   width: calc(var(--chopstick-size) - var(--clip-amount-right));
-  /* Using the new right-specific clip amount */
 }
 
 #box {
