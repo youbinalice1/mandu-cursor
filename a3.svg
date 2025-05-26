@@ -7,7 +7,7 @@
       }
 
       .cls-2 {
-        fill: #d40f0f;
+        fill:rgb(255, 0, 0);
       }
 
       .cls-3 {
