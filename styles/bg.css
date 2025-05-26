@@ -39,12 +39,32 @@ body {
   left: 0px;
   margin-left: calc(-1 * var(--clip-amount-left));
   width: var(--chopstick-size);
+  animation: chopstick-slide-in-left 2s ease;
 }
 
 #chopstick2 {
   top: var(--right-top);
   right: 0px;
   width: calc(var(--chopstick-size) - var(--clip-amount-right));
+  animation: chopstick-slide-in-right 2s ease;
+}
+
+@keyframes chopstick-slide-in-left {
+  0% {
+    margin-left: calc(-1 * var(--clip-amount-left) - 400px);
+  }
+  100% {
+    margin-left: calc(-1 * var(--clip-amount-left));
+  }
+}
+
+@keyframes chopstick-slide-in-right {
+  0% {
+    margin-right: calc(-1 * var(--clip-amount-right) - 400px);
+  }
+  100% {
+    margin-right: 0px;
+  }
 }
 
 #box {
