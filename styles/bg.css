@@ -14,7 +14,6 @@ body {
   --neko-top: 1500px;
   --neko-left: 40px;
   --nowopen-width: 270px;
-  --nowopen-top: 250px;
   --nowopen-right: 650px;
   --space-edge-to-box: calc((100vw - min(var(--box-width), 90vw)) / 2);
 }
@@ -81,8 +80,10 @@ body {
 #nowopen {
   width: var(--nowopen-width);
   position: absolute;
-  top: var(--nowopen-top);
-  right: var(--nowopen-right);
+  top: 300px;
+  right: calc(var(--space-edge-to-box) - 130px);
+  transform: translateY(-50%);
+  z-index: 5;
 }
 
 @media screen and (max-width: 1370px) {
