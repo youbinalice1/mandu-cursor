@@ -1,22 +1,26 @@
 /* Chopsticks */
 
-html, body {
+html,
+body {
   scroll-behavior: smooth !important;
 }
 
 :root {
   --box-width: 1000px;
-  --chopstick-size: 400px;
-  --clip-amount-left: 40px; /* Clip amount for the left chopstick */
-  --clip-amount-right: 100px; /* Effective clip amount for the right chopstick (was 40px * 2.5) */
+  --chopstick-size: 1e3px;
+  --clip-amount-left: 40px;
+  /* Clip amount for the left chopstick */
+  --clip-amount-right: 100px;
+  /* Effective clip amount for the right chopstick (was 40px * 2.5) */
   --left-top: 60px;
   --right-top: 300px;
-    --neko-width: 100px;
+  --neko-width: 100px;
   --neko-top: 500px;
   --neko-left: 40px;
   --nowopen-width: 100px;
   --nowopen-top: 100px;
   --nowopen-right: 40px;
+  --space-edge-to-box: calc((100vw - min(var(--box-width), 90vw)) / 2);
 }
 
 .chopstick-container {
@@ -25,9 +29,9 @@ html, body {
 }
 
 .chopstick {
-    position: absolute;
-        height: 400px;
-        overflow-x: hidden;
+  position: absolute;
+  height: var(--chopstick-size);
+  overflow-x: hidden;
 }
 
 .chopstick img {
@@ -36,16 +40,17 @@ html, body {
 }
 
 #chopstick1 {
-    top: var(--left-top);
-    left: 0px;
-    margin-left: calc(-1 * var(--clip-amount-left));
-    width: var(--chopstick-size);
+  top: var(--left-top);
+  left: 0px;
+  margin-left: calc(-1 * var(--clip-amount-left));
+  width: var(--chopstick-size);
 }
 
 #chopstick2 {
-    top: var(--right-top);
-    right: 0px;
-    width: calc(var(--chopstick-size) - var(--clip-amount-right));  /* Using the new right-specific clip amount */
+  top: var(--right-top);
+  right: 0px;
+  width: calc(var(--chopstick-size) - var(--clip-amount-right));
+  /* Using the new right-specific clip amount */
 }
 
 #box {
@@ -54,7 +59,8 @@ html, body {
   max-width: 90vw;
   min-width: 340px;
   margin: 5em auto 4em auto;
-  background: grey;
+  background: white;
+  border: solid 5px black;
   z-index: 2;
 }
 
@@ -85,22 +91,68 @@ html, body {
 }
 
 @media screen and (max-width: 1370px) {
-  #neko, #nowopen {
+
+  #neko,
+  #nowopen {
     display: none;
   }
 }
 
-@media screen and (max-width: 1271px) {
+@media screen and (max-width: 1365px) {
   #a4 {
     display: none;
   }
 }
 
 /* Responsive chopsticks for smaller screens */
+
+:root {
+  --clip-amount-left: calc(380px + calc(-0.5 * calc(100vw - 1348px)));
+  --clip-amount-right: calc(510px + calc(-0.5 * calc(100vw - 1348px)));
+}
+
 @media screen and (max-width: 1348px) {
   :root {
-    --clip-amount-left: calc(50px + calc(-0.5 * calc(100vw - 1348px)));
-    --clip-amount-right: calc(100px + calc(-0.5 * calc(100vw - 1348px)));
+    --clip-amount-right: calc(540px + calc(-0.3 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(380px + calc(-0.3 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  :root {
+    --chopstick-size: 800px;
+    --clip-amount-right: calc(440px + calc(-0.15 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(320px + calc(-0.15 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 970px) {
+  :root {
+    --clip-amount-right: calc(430px + calc(-0.1 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(320px + calc(-0.09 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 724px) {
+  :root {
+    --clip-amount-right: calc(430px + calc(-0.08 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(320px + calc(-0.08 * calc(100vw - 1348px)));
   }
 
+}
+
+@media screen and (max-width: 550px) {
+  :root {
+    --chopstick-size: 700px;
+    --clip-amount-right: calc(360px + calc(-0.08 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(265px + calc(-0.08 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 420px) {
+  :root {
+    --chopstick-size: 680px;
+    --clip-amount-right: calc(342px + calc(-0.08 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(245px + calc(-0.08 * calc(100vw - 1348px)));
+  }
 }
