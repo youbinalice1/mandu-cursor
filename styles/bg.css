@@ -7,7 +7,8 @@ html, body {
 :root {
   --box-width: 1000px;
   --chopstick-size: 400px;
-  --clip-amount: 40px;  /* Common clip amount for both chopsticks */
+  --clip-amount-left: 40px; /* Clip amount for the left chopstick */
+  --clip-amount-right: 100px; /* Effective clip amount for the right chopstick (was 40px * 2.5) */
   --left-top: 60px;
   --right-top: 300px;
     --neko-width: 100px;
@@ -37,14 +38,14 @@ html, body {
 #chopstick1 {
     top: var(--left-top);
     left: 0px;
-    margin-left: calc(-1 * var(--clip-amount));
+    margin-left: calc(-1 * var(--clip-amount-left));
     width: var(--chopstick-size);
 }
 
 #chopstick2 {
     top: var(--right-top);
     right: 0px;
-    width: calc(var(--chopstick-size) - (var(--clip-amount) * 2.5));  /* Using the same clip variable with multiplier */
+    width: calc(var(--chopstick-size) - var(--clip-amount-right));  /* Using the new right-specific clip amount */
 }
 
 #box {
@@ -96,31 +97,10 @@ html, body {
 }
 
 /* Responsive chopsticks for smaller screens */
-@media screen and (max-width: 1078px) {
+@media screen and (max-width: 1348px) {
   :root {
-    --chopstick-size: calc(200px + 10vw);
-    --clip-amount: calc(15px + 1.5vw);
-    --clip-multiplier-left: 1.2;
-    --clip-multiplier-right: 3;
+    --clip-amount-left: calc(50px + calc(-0.5 * calc(100vw - 1348px)));
+    --clip-amount-right: calc(100px + calc(-0.5 * calc(100vw - 1348px)));
   }
-  
-  .chopstick {
-    height: var(--chopstick-size);
-  }
-  
-  #chopstick1 {
-    margin-left: calc(-1 * var(--clip-amount) * var(--clip-multiplier-left));
-  }
-  
-  #chopstick2 {
-    width: calc(var(--chopstick-size) - (var(--clip-amount) * var(--clip-multiplier-right)));
-  }
-}
 
-/* Even smaller screens */
-@media screen and (max-width: 768px) {
-  :root {
-    --chopstick-size: calc(180px + 8vw);
-    --clip-amount: calc(10px + 1.5vw);
-  }
 }
