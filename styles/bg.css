@@ -1,0 +1,222 @@
+html,
+body {
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+}
+
+:root {
+  --box-width: 1000px;
+  --chopstick-size: 1e3px;
+  --clip-amount-left: 40px;
+  --clip-amount-right: 100px;
+  --left-top: 60px;
+  --right-top: 1200px;
+  --neko-width: 200px;
+  --neko-top: 1500px;
+  --neko-left: 40px;
+  --nowopen-width: 270px;
+  --nowopen-right: 650px;
+  --space-edge-to-box: calc((100vw - min(var(--box-width), 90vw)) / 2);
+}
+
+.chopstick-container {
+  /* position: relative; */
+  width: 100vw;
+}
+
+.chopstick {
+  position: absolute;
+  height: var(--chopstick-size);
+  overflow-x: hidden;
+}
+
+.chopstick img {
+  position: inherit;
+  width: var(--chopstick-size);
+}
+
+#chopstick1 {
+  top: var(--left-top);
+  left: 0px;
+  margin-left: calc(-1 * var(--clip-amount-left));
+  width: var(--chopstick-size);
+  animation: chopstick-slide-in-left 2s ease;
+}
+
+#chopstick2 {
+  top: var(--right-top);
+  right: 0px;
+  width: calc(var(--chopstick-size) - var(--clip-amount-right));
+  animation: chopstick-slide-in-right 2s ease;
+}
+
+@keyframes chopstick-slide-in-left {
+  0% {
+    margin-left: calc(-1 * var(--clip-amount-left) - 400px);
+  }
+  100% {
+    margin-left: calc(-1 * var(--clip-amount-left));
+  }
+}
+
+@keyframes chopstick-slide-in-right {
+  0% {
+    margin-right: calc(-1 * var(--clip-amount-right) - 400px);
+  }
+  100% {
+    margin-right: 0px;
+  }
+}
+
+#box {
+  width: var(--box-width);
+  min-height: 4000px;
+  max-width: 85vw;
+  /* min-width: 340px; */
+  margin: 5em auto 4em auto;
+  background: white;
+  border: solid 5px black;
+  z-index: 2;
+}
+
+.c1 {
+  z-index: -1;
+}
+
+.c2 {
+  z-index: 3;
+}
+
+.c3 {
+  z-index: 4;
+}
+
+#neko {
+  width: var(--neko-width);
+  position: absolute;
+  top: var(--neko-top);
+  left: var(--neko-left);
+}
+
+#nowopen {
+  width: var(--nowopen-width);
+  position: absolute;
+  top: 300px;
+  right: calc(var(--space-edge-to-box) - 130px);
+  transform: translateY(-50%);
+  z-index: 5;
+  transform-origin: 150.7px 15.5px;
+}
+
+#nowopen:hover {
+  animation: door-jiggle 3s ease-out;
+}
+
+@keyframes door-jiggle {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  2% {
+    transform: translateY(-50%) rotate(8deg);
+  }
+  4% {
+    transform: translateY(-50%) rotate(-6deg);
+  }
+  6% {
+    transform: translateY(-50%) rotate(4deg);
+  }
+  8% {
+    transform: translateY(-50%) rotate(-3deg);
+  }
+  12% {
+    transform: translateY(-50%) rotate(2deg);
+  }
+  16% {
+    transform: translateY(-50%) rotate(-1.5deg);
+  }
+  22% {
+    transform: translateY(-50%) rotate(1deg);
+  }
+  30% {
+    transform: translateY(-50%) rotate(-0.5deg);
+  }
+  40% {
+    transform: translateY(-50%) rotate(0.3deg);
+  }
+  55% {
+    transform: translateY(-50%) rotate(-0.1deg);
+  }
+  75% {
+    transform: translateY(-50%) rotate(0.05deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 1370px) {
+
+  #neko,
+  #nowopen {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  #a4 {
+    display: none;
+  }
+}
+
+/* Responsive chopsticks for smaller screens */
+
+:root {
+  --clip-amount-left: calc(380px + calc(-0.5 * calc(100vw - 1348px)));
+  --clip-amount-right: calc(510px + calc(-0.5 * calc(100vw - 1348px)));
+}
+
+@media screen and (max-width: 1348px) {
+  :root {
+    --clip-amount-right: calc(540px + calc(-0.3 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(380px + calc(-0.3 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  :root {
+    --chopstick-size: 800px;
+    --clip-amount-right: calc(440px + calc(-0.15 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(320px + calc(-0.15 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 970px) {
+  :root {
+    --clip-amount-right: calc(430px + calc(-0.1 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(320px + calc(-0.09 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 724px) {
+  :root {
+    --clip-amount-right: calc(430px + calc(-0.08 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(320px + calc(-0.08 * calc(100vw - 1348px)));
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  :root {
+    --chopstick-size: 700px;
+    --clip-amount-right: calc(360px + calc(-0.08 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(265px + calc(-0.08 * calc(100vw - 1348px)));
+  }
+}
+
+@media screen and (max-width: 420px) {
+  :root {
+    --chopstick-size: 680px;
+    --clip-amount-right: calc(342px + calc(-0.08 * calc(100vw - 1348px)));
+    --clip-amount-left: calc(245px + calc(-0.08 * calc(100vw - 1348px)));
+  }
+}
